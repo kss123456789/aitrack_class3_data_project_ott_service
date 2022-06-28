@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from flask_restx import Api
 from flask_cors import CORS
 
-import config
+from backend import config
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -40,13 +40,13 @@ def create_app():
     migrate.init_app(app, db)
 
     # api add
-    from views.user import UserManagement
+    from backend.views.user import UserManagement
     api.add_namespace(UserManagement, '/user')
-    from views.test import Test
+    from backend.views.test import Test
     api.add_namespace(Test, '/test')
-    from views.result import Result
+    from backend.views.result import Result
     api.add_namespace(Result, '/result')
-    from views.character import MbtiCharacter
+    from backend.views.character import MbtiCharacter
     api.add_namespace(MbtiCharacter, '/character')
 
     # 데이터베이스 초기화. 필요한 경우 주석 해제 후 실행.

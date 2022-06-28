@@ -1,8 +1,8 @@
 from flask import request, session
 from flask_restx import Resource, Namespace, fields
 from flask_login import login_required, login_user, logout_user
-from app import login_manager
-from models import *
+from backend.app import login_manager
+from backend.models import *
 from flask_bcrypt import Bcrypt
 
 UserManagement = Namespace(

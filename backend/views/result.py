@@ -1,6 +1,6 @@
 from flask import request, session
 from flask_restx import Resource, Namespace, fields
-from models import *
+from backend.models import *
 from flask_login import login_required, current_user
 from collections import Counter
 from sqlalchemy import func

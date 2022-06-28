@@ -1,6 +1,6 @@
 from flask_login.utils import login_required
 from flask_restx import Resource, Namespace, fields
-from models import *
+from backend.models import *
 
 Test = Namespace(
     name='Test',
