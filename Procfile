@@ -1,2 +1,2 @@
 web: sh -c 'cd ./backend/'
-web: gunicorn app:app
+web: gunicorn 'backend.app:app'
