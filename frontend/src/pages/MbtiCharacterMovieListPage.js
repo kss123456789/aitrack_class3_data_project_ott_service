@@ -27,7 +27,7 @@ const MbtiCharacterMovieListPage = () => {
     useEffect(() => {
         async function getMbti() {
             try {
-                const mbti = await axios.get("http://localhost:5000/result/", {withCredentials: true})
+                const mbti = await axios.get("https://mbti-movie-test.herokuapp.com/result/", {withCredentials: true})
                 setUserMBTI(mbti.data.user_mbti)
             } catch (error) {
                 console.log(error)
@@ -39,7 +39,7 @@ const MbtiCharacterMovieListPage = () => {
     useEffect(() => {
         async function getMbtiCharacterMovieList() {
             try {
-                const res = await axios.get(`http://localhost:5000/character/movie_list/${userMBTI}/0`, {withCredentials: true})
+                const res = await axios.get(`https://mbti-movie-test.herokuapp.com/character/movie_list/${userMBTI}/0`, {withCredentials: true})
                 setMovieList(res.data.total_character_N_movies)
                 if ( idx >= 1) {
                     document.getElementById(idx).scrollIntoView({ behavior : "smooth" });
@@ -67,7 +67,7 @@ const MbtiCharacterMovieListPage = () => {
     
     const logout = () => {
         axios
-            .get("http://localhost:5000/user/logout", {withCredentials: true})
+            .get("https://mbti-movie-test.herokuapp.com/user/logout", {withCredentials: true})
             .then(() => {
                 history.push("/")
             })

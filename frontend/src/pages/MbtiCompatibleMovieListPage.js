@@ -26,7 +26,7 @@ const MbtiCompatibleMovieListPage = () => {
     useEffect(() => {
         async function getMbtiCharacterMovieList() {
             try {
-                const res = await axios.get(`http://localhost:5000/character/movie_list/${compatibleMBTI}/1`, {withCredentials: true})
+                const res = await axios.get(`https://mbti-movie-test.herokuapp.com/character/movie_list/${compatibleMBTI}/1`, {withCredentials: true})
                 setMovieList(res.data.total_character_N_movies)
                 if ( idx >= 1) {
                     document.getElementById(idx).scrollIntoView({ behavior : "smooth" });
@@ -45,7 +45,7 @@ const MbtiCompatibleMovieListPage = () => {
 
     const logout = () => {
         axios
-            .get("http://localhost:5000/user/logout", {withCredentials: true})
+            .get("https://mbti-movie-test.herokuapp.com/user/logout", {withCredentials: true})
             .then(() => {
                 history.push("/")
             })

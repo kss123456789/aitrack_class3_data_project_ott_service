@@ -191,5 +191,5 @@ class Top10Movies(Resource):
         return {
             'top10_for_same_mbti_users': self.top10_to_same_mbti_user(current_user.mbti),
             'top10_in_naver': self.top10_in_naver_same_mbti_char(current_user.mbti),
-            'word_cloud_src': "img/word_clouds/wordcloud_" + str(current_user.mbti)+".jpg"
+            'word_cloud_src': "frontend/img/word_clouds/wordcloud_" + str(current_user.mbti)+".jpg"
         }

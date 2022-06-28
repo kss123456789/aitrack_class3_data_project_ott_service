@@ -9,7 +9,7 @@ Test = Namespace(
 
 question_fields = Test.model('Question', {
     'question': fields.String(description="심리 테스트 문항", example="1. 심심한 당신, 어떤 영화를 볼까요?"),
-    'img_url': fields.String(description="이미지 url", example="img/for_test/0.png"),
+    'img_url': fields.String(description="이미지 url", example="frontend/img/for_test/0.png"),
     'options': fields.List(fields.String)
 })
 

@@ -26,7 +26,7 @@ const Modal = ({ openModal }) => {
 
     const onSubmit = () => {
         axios
-            .post("http://localhost:5000/user/login", {
+            .post("https://mbti-movie-test.herokuapp.com/user/login", {
                 "login_id": userId,
                 "login_pw": password,
             }, axiosConfig)
@@ -40,7 +40,7 @@ const Modal = ({ openModal }) => {
 
     const onSignUp = () => {
         axios
-            .post("http://localhost:5000/user/register", {
+            .post("https://mbti-movie-test.herokuapp.com/user/register", {
                 "id": userId,
                 "pw": password,
                 "pw2": passwordCheck
@@ -71,7 +71,7 @@ const Modal = ({ openModal }) => {
 
     const clickHandler = () => {
         axios
-            .post("http://localhost:5000/result/", {
+            .post("https://mbti-movie-test.herokuapp.com/result/", {
                 "user_mbti": selected
             }, axiosConfig)
             .then(() => {

@@ -62,7 +62,7 @@ const Top10MovieInfoModal = ({ openModal, selectedMovie }) => {
 
     const sendReview = () => {
         axios
-            .post("http://localhost:5000/character/movie_list", {
+            .post("https://mbti-movie-test.herokuapp.com/character/movie_list", {
                 "satisfaction_list": satisfactionList
             }, axiosConfig)
             .then(() => {

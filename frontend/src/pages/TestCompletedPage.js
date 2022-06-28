@@ -12,7 +12,7 @@ const TestCompletedPage = () => {
     useEffect(() => {
         async function getMBTI() {
             try {
-                const res = await axios.get("http://localhost:5000/result/", {withCredentials: true})
+                const res = await axios.get("https://mbti-movie-test.herokuapp.com/result/", {withCredentials: true})
                 setUserMBTI(res.data.user_mbti)
             } catch (error) {
                 console.log(error)

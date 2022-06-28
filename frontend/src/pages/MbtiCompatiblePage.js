@@ -16,7 +16,7 @@ const MbtiCompatiblePage = () => {
     useEffect(() => {
         async function getMbti() {
             try {
-                const mbti = await axios.get("http://localhost:5000/result/", {withCredentials: true})
+                const mbti = await axios.get("https://mbti-movie-test.herokuapp.com/result/", {withCredentials: true})
                 setUserMBTI(mbti.data.user_mbti)
             } catch (error) {
                 console.log(error)
@@ -29,7 +29,7 @@ const MbtiCompatiblePage = () => {
     useEffect(() => {
         async function getCompatibleCharacter() {
             try {
-                const res = await axios.get("http://localhost:5000/character/1", {withCredentials: true})
+                const res = await axios.get("https://mbti-movie-test.herokuapp.com/character/1", {withCredentials: true})
                 setCharList(res.data.character_info)
                 setCompatibleMBTI(res.data.characters_mbti)
             } catch (error) {
@@ -42,7 +42,7 @@ const MbtiCompatiblePage = () => {
     const refreshHandler = () => {
         async function getMbtiCharacterRefresh() {
             try {
-                const res = await axios.get("http://localhost:5000/character/refresh/1", {withCredentials: true})
+                const res = await axios.get("https://mbti-movie-test.herokuapp.com/character/refresh/1", {withCredentials: true})
                 setCharList(res.data.character_info)
             } catch (error) {
                 console.log(error)
