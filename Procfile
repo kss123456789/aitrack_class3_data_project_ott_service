@@ -1,1 +1,1 @@
-web: gunicorn 'backend.app:app' --preload --bind 0.0.0.0:5000
+web: gunicorn 'backend.app:create_app()' --preload --bind 0.0.0.0:${PORT}
